@@ -12,6 +12,7 @@ build/
 # backend
 /backend/build/
 /backend/.env
+/backend/src/main/resources/application.yml
 
 # ai
 /ai/__pycache__/
