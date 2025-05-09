@@ -1,0 +1,31 @@
+# 공통
+.gradle/
+build/
+.env
+
+# frontend
+/frontend/node_modules/
+/frontend/dist/
+/frontend/build/
+/frontend/.env
+
+# backend
+/backend/build/
+/backend/.env
+
+# ai
+/ai/__pycache__/
+/ai/.env
+/ai/.venv/
+/ai/venv/
+/ai/.mypy_cache/
+/ai/.pytest_cache/
+/ai/.idea/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+out/
