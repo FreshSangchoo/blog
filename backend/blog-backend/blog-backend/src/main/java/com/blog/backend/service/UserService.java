@@ -1,5 +1,7 @@
-package com.blog.backend.domain.user;
+package com.blog.backend.service;
 
+import com.blog.backend.entity.User;
+import com.blog.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

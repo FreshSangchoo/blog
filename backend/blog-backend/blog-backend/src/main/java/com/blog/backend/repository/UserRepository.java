@@ -1,5 +1,6 @@
-package com.blog.backend.domain.user;
+package com.blog.backend.repository;
 
+import com.blog.backend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

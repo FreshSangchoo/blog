@@ -12,7 +12,7 @@ build/
 # backend
 /backend/build/
 /backend/.env
-/backend/src/main/resources/application.yml
+/backend/blog-backend/blog-backend/src/main/resources/application.yml
 
 # ai
 /ai/__pycache__/

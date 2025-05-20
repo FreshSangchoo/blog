@@ -1,4 +1,4 @@
-package com.blog.backend.domain.user;
+package com.blog.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

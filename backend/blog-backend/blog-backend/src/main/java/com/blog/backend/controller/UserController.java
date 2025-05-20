@@ -1,5 +1,7 @@
-package com.blog.backend.domain.user;
+package com.blog.backend.controller;
 
+import com.blog.backend.service.UserService;
+import com.blog.backend.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
