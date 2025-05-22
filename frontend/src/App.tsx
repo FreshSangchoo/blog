@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import PostDetail from "./components/post/PostDetail";
 import WritePost from "./components/post/WritePost";
 import EditPost from "./components/post/EditPost";
+import "@/App.css";
 
 function App() {
   return (

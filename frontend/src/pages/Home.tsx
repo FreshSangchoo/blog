@@ -30,13 +30,16 @@ function Home() {
           ) : (
             <ul className="post-list-container">
               {posts.map((post) => (
-                <li
-                  key={post.id}
-                  onClick={() => navigate(`/post/${post.id}`)}
-                  className="post-list-detail-container"
-                >
-                  <div>{post.title}</div>
-                  <div>{post.updatedAt ? post.updatedAt : post.createdAt}</div>
+                <li key={post.id} className="post-list-detail-container">
+                  <div
+                    className="post-list-detail-title"
+                    onClick={() => navigate(`/post/${post.id}`)}
+                  >
+                    {post.title}
+                  </div>
+                  <div className="post-list-detail-date">
+                    {post.updatedAt ? post.updatedAt : post.createdAt}
+                  </div>
                 </li>
               ))}
             </ul>

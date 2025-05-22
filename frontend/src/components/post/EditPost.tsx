@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { Post } from "../../types/Post";
 import { useEffect, useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
+import "@/css/post/EditPost.css";
 
 function EditPost() {
   const { id } = useParams<{ id: string }>();
@@ -39,7 +40,7 @@ function EditPost() {
     const month = today.getMonth() + 1;
     const date = today.getDate();
 
-    const updatedAt = `(수정) ${year}년 ${month}월 ${date}일`;
+    const updatedAt = `${year}년 ${month}월 ${date}일 (수정) `;
 
     const updated = stored.map((p: Post) =>
       p.id === Number(id) ? { ...p, title, content, updatedAt } : p
@@ -52,19 +53,44 @@ function EditPost() {
 
   if (!post) return <div>글을 찾을 수 없습니다.</div>;
 
+  const handlePaste = async (event: ClipboardEvent) => {
+    const items = event.clipboardData?.items;
+    if (!items) return;
+
+    for (const item of items) {
+      const file = item.getAsFile();
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const imageUrl = reader.result as string;
+          const markdown = `![붙여넣은 이미지](${imageUrl})`;
+
+          setContent((prev) => (prev || "") + `\n\n` + markdown);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  };
+
+  const handlePasteWrapper = (e: React.ClipboardEvent<HTMLDivElement>) => {
+    handlePaste(e.nativeEvent);
+  };
+
   return (
-    <div>
+    <div className="edit-post-container" onPaste={handlePasteWrapper}>
       <h1>수정하기</h1>
-      <div>
+      <div className="edit-post-title-container">
         <label>제목: </label>
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
       </div>
-      <div>
+      <div className="edit-post-content-container">
         <label>내용</label>
         <MDEditor value={content} onChange={setContent} />
       </div>
-      <div>
-        <button onClick={handleSave}>저장</button>
+      <div className="edit-post-save-button-container">
+        <button onClick={handleSave} className="edit-post-save-button">
+          저장
+        </button>
       </div>
     </div>
   );

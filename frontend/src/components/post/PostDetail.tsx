@@ -3,6 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import type { Post } from "../../types/Post";
 
+import "@/css/post/PostDetail.css";
+import Header from "../Header";
+
 function PostDetail() {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<Post | null>(null);
@@ -36,19 +39,34 @@ function PostDetail() {
   };
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      {typeof post.updatedAt === "string" ? (
-        <div>{post.updatedAt}2</div>
-      ) : (
-        <div>{post.createdAt}1</div>
-      )}
-      <div>
-        <button onClick={() => navigate("/")}>목록</button>
-        <button onClick={() => navigate(`/edit/${post.id}`)}>수정</button>
-        <button onClick={handleDelete}>삭제</button>
+    <div className="container">
+      <Header />
+      <div className="post-detail-container">
+        <h1 className="post-detail-title">{post.title}</h1>
+        {typeof post.updatedAt === "string" ? (
+          <div className="post-detail-info">작성일: {post.updatedAt}</div>
+        ) : (
+          <div className="post-detail-info">작성일: {post.createdAt}</div>
+        )}
+
+        <div className="post-detail-content">
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+        </div>
+        <div className="post-detail-edit-container">
+          <button onClick={() => navigate("/")} className="button">
+            목록
+          </button>
+          <button
+            onClick={() => navigate(`/edit/${post.id}`)}
+            className="button"
+          >
+            수정
+          </button>
+          <button onClick={handleDelete} className="button">
+            삭제
+          </button>
+        </div>
       </div>
-      <ReactMarkdown>{post.content}</ReactMarkdown>
     </div>
   );
 }

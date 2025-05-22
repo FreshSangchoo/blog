@@ -64,26 +64,22 @@ function WritePost() {
   };
 
   return (
-    <div onPaste={handlePasteWrapper}>
-      <h1>글 작성</h1>
-      <div>
-        <label>제목: </label>
+    <div onPaste={handlePasteWrapper} className="wirte-post-container">
+      <h1>게시글 작성</h1>
+      <div className="write-post-title-container">
         <input
           className="write-post-title-input"
           type="text"
-          placeholder="제목을 입력하세요."
+          placeholder="제목을 입력해 주세요."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
-      <div>
-        <label>내용</label>
-        <div ref={editorRef}>
-          <MDEditor value={content} onChange={setContent} />
-        </div>
+      <div className="write-post-content-container" ref={editorRef}>
+        <MDEditor value={content} onChange={setContent} />
       </div>
-      <div>
-        <button onClick={registPost}>작성 완료</button>
+      <div className="write-post-save-button-container">
+        <button onClick={registPost}>등록</button>
       </div>
     </div>
   );

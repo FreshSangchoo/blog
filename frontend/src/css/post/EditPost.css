@@ -1,0 +1,34 @@
+.edit-post-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+@media (max-width: 1024px) {
+  .edit-post-container {
+    width: 90%;
+  }
+}
+
+.edit-post-title-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.edit-post-content-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.edit-post-save-button-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  background-color: antiquewhite;
+}
+
+.edit-post-save-button {
+  margin-right: 5px;
+}
