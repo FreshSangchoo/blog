@@ -77,7 +77,7 @@ function EditPost() {
         />
         <div className="edit-post-divider" />
         <div className="write-post-hashtag-container">
-          {hashtags.map((tag, idx) => (
+          {hashtags?.map((tag, idx) => (
             <span key={idx} className="write-post-hashtag-chip">
               #{tag}
               <button
@@ -113,7 +113,12 @@ function EditPost() {
         />
       </div>
       <div className="edit-post-save-button-container">
-        <button onClick={handleSave}>저장</button>
+        <button onClick={handleSave} className="button">
+          저장
+        </button>
+        <button onClick={() => navigate(-1)} className="button">
+          취소
+        </button>
       </div>
     </div>
   );

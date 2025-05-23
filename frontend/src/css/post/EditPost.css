@@ -139,13 +139,8 @@
 
 .edit-post-save-button-container {
   width: 100%;
-  padding: 10px 10px 10px 0px;
   display: flex;
   justify-content: end;
-}
-
-.edit-post-save-button {
-  margin-right: 5px;
 }
 
 @media (max-width: 1024px) {

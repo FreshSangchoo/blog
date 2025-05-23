@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "@/css/post/WritePost.css";
 import { useNavigate } from "react-router-dom";
 import { Editor } from "@toast-ui/react-editor";
@@ -8,8 +8,25 @@ function WritePost() {
   const [title, setTitle] = useState("");
   const [hashtagInput, setHashtagInput] = useState("");
   const [hashtags, setHashtags] = useState<string[]>([]);
+  const [content, setContent] = useState("");
   const navigate = useNavigate();
   const editorRef = useRef<Editor>(null);
+
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+
+    const hasUnsaveChanges = title || hashtags.length > 0 || content.trim();
+
+    if (hasUnsaveChanges) {
+      window.addEventListener("beforeunload", handleBeforeUnload);
+    }
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [title, hashtags, content]);
 
   const registPost = () => {
     const content = editorRef.current?.getInstance().getMarkdown();
@@ -104,10 +121,19 @@ function WritePost() {
           height="400px"
           initialEditType="wysiwyg"
           useCommandShortcut={true}
+          onChange={() => {
+            const value = editorRef.current?.getInstance().getMarkdown();
+            setContent(value || "");
+          }}
         />
       </div>
       <div className="write-post-save-button-container">
-        <button onClick={registPost}>등록</button>
+        <button onClick={registPost} className="button">
+          등록
+        </button>
+        <button onClick={() => navigate(-1)} className="button">
+          취소
+        </button>
       </div>
     </div>
   );

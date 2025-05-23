@@ -47,7 +47,11 @@ function PostDetail() {
             .slice()
             .sort((a, b) => a.localeCompare(b, "ko"))
             .map((tag, idx) => (
-              <span key={idx} className="post-detail-hashtags">
+              <span
+                key={idx}
+                className="post-detail-hashtags"
+                onClick={() => navigate(`/list/${tag}`)}
+              >
                 #{tag}
               </span>
             ))}
@@ -64,7 +68,7 @@ function PostDetail() {
         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
       ></div>
       <div className="post-detail-edit-container">
-        <button onClick={() => navigate("/")} className="button">
+        <button onClick={() => navigate("/list")} className="button">
           목록
         </button>
         <button onClick={() => navigate(`/edit/${post.id}`)} className="button">
