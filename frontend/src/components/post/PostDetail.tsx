@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
 import type { Post } from "../../types/Post";
+import DOMPurify from "dompurify";
 
 import "@/css/post/PostDetail.css";
 import Header from "../Header";
@@ -49,9 +49,10 @@ function PostDetail() {
           <div className="post-detail-info">작성일: {post.createdAt}</div>
         )}
 
-        <div className="post-detail-content">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
+        <div
+          className="post-detail-content"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+        ></div>
         <div className="post-detail-edit-container">
           <button onClick={() => navigate("/")} className="button">
             목록

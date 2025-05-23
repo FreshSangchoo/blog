@@ -1,38 +1,17 @@
 import { useRef, useState } from "react";
 import "@/css/post/WritePost.css";
-import MDEditor from "@uiw/react-md-editor";
 import { useNavigate } from "react-router-dom";
+import { Editor } from "@toast-ui/react-editor";
+import "@toast-ui/editor/dist/toastui-editor.css";
 
 function WritePost() {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState<string | undefined>("");
   const navigate = useNavigate();
-  const editorRef = useRef<HTMLDivElement>(null);
-
-  const handlePaste = async (event: ClipboardEvent) => {
-    const items = event.clipboardData?.items;
-    if (!items) return;
-
-    for (const item of items) {
-      const file = item.getAsFile();
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          const imageUrl = reader.result as string;
-          const markdown = `![붙여넣은 이미지](${imageUrl})`;
-
-          setContent((prev) => (prev || "") + `\n\n` + markdown);
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-  };
-
-  const handlePasteWrapper = (e: React.ClipboardEvent<HTMLDivElement>) => {
-    handlePaste(e.nativeEvent);
-  };
+  const editorRef = useRef<Editor>(null);
 
   const registPost = () => {
+    const content = editorRef.current?.getInstance().getMarkdown();
+
     if (!title || !content) {
       alert("제목과 내용을 모두 입력해주세요.");
       return;
@@ -64,7 +43,7 @@ function WritePost() {
   };
 
   return (
-    <div onPaste={handlePasteWrapper} className="wirte-post-container">
+    <div className="wirte-post-container">
       <h1>게시글 작성</h1>
       <div className="write-post-title-container">
         <input
@@ -75,8 +54,15 @@ function WritePost() {
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
-      <div className="write-post-content-container" ref={editorRef}>
-        <MDEditor value={content} onChange={setContent} />
+      <div className="write-post-content-container">
+        <Editor
+          ref={editorRef}
+          initialValue=" "
+          previewStyle="vertical"
+          height="400px"
+          initialEditType="WYSIWYG"
+          useCommandShortcut={true}
+        />
       </div>
       <div className="write-post-save-button-container">
         <button onClick={registPost}>등록</button>
