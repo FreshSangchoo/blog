@@ -6,16 +6,20 @@ import Menu from "../components/Menu";
 
 function Layout() {
   const location = useLocation();
-  const hideOptions =
+  const menuHideOptions =
     location.pathname.startsWith("/write") ||
     location.pathname.startsWith("/edit");
+  const tagsHideOptions =
+    menuHideOptions ||
+    location.pathname.startsWith("/introduce") ||
+    location.pathname.startsWith("/project");
 
   return (
     <div className="container">
       <Header />
-      {!hideOptions && <Menu />}
+      {!menuHideOptions && <Menu />}
       <div className="body">
-        {!hideOptions && <Tags />}
+        {!tagsHideOptions && <Tags />}
         <div className="contents-container">
           <Outlet />
         </div>
