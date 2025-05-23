@@ -6,6 +6,8 @@ import "@toast-ui/editor/dist/toastui-editor.css";
 
 function WritePost() {
   const [title, setTitle] = useState("");
+  const [hashtagInput, setHashtagInput] = useState("");
+  const [hashtags, setHashtags] = useState<string[]>([]);
   const navigate = useNavigate();
   const editorRef = useRef<Editor>(null);
 
@@ -33,18 +35,33 @@ function WritePost() {
       id: Date.now(),
       title,
       content,
+      hashtags,
       createdAt,
     };
 
     const saved = JSON.parse(localStorage.getItem("posts") || "[]");
     localStorage.setItem("posts", JSON.stringify([newPost, ...saved]));
 
+    alert("게시글이 등록되었습니다.");
     navigate("/");
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if ((e.key === "Enter" || e.key === " ") && hashtagInput.trim()) {
+      const tag = hashtagInput.trim().replace(/^#*/, "");
+      if (!hashtags.includes(tag)) {
+        setHashtags([...hashtags, tag]);
+      }
+      setHashtagInput("");
+      e.preventDefault();
+    } else if (e.key === "Backspace" && !hashtagInput && hashtags.length > 0) {
+      setHashtags(hashtags.slice(0, hashtags.length - 1));
+    }
   };
 
   return (
     <div className="wirte-post-container">
-      <h1>게시글 작성</h1>
+      <h1 className="write-post-title">게시글 작성</h1>
       <div className="write-post-title-container">
         <input
           className="write-post-title-input"
@@ -53,6 +70,31 @@ function WritePost() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+        <div className="write-post-divider" />
+        <div className="write-post-hashtag-container">
+          {hashtags.map((tag, idx) => (
+            <span key={idx} className="write-post-hashtag-chip">
+              #{tag}
+              <button
+                type="button"
+                className="write-post-hashtag-remove"
+                onClick={() => {
+                  setHashtags(hashtags.filter((_, i) => i !== idx));
+                }}
+              >
+                &times;
+              </button>
+            </span>
+          ))}
+          <input
+            type="text"
+            value={hashtagInput}
+            className="write-post-hashtag-input"
+            onChange={(e) => setHashtagInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="#해시태그를 입력해 주세요."
+          />
+        </div>
       </div>
       <div className="write-post-content-container">
         <Editor
@@ -60,7 +102,7 @@ function WritePost() {
           initialValue=" "
           previewStyle="vertical"
           height="400px"
-          initialEditType="WYSIWYG"
+          initialEditType="wysiwyg"
           useCommandShortcut={true}
         />
       </div>

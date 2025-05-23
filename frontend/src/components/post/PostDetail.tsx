@@ -39,34 +39,40 @@ function PostDetail() {
   };
 
   return (
-    <div className="container">
-      <Header />
-      <div className="post-detail-container">
-        <h1 className="post-detail-title">{post.title}</h1>
-        {typeof post.updatedAt === "string" ? (
-          <div className="post-detail-info">작성일: {post.updatedAt}</div>
-        ) : (
-          <div className="post-detail-info">작성일: {post.createdAt}</div>
-        )}
-
-        <div
-          className="post-detail-content"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
-        ></div>
-        <div className="post-detail-edit-container">
-          <button onClick={() => navigate("/")} className="button">
-            목록
-          </button>
-          <button
-            onClick={() => navigate(`/edit/${post.id}`)}
-            className="button"
-          >
-            수정
-          </button>
-          <button onClick={handleDelete} className="button">
-            삭제
-          </button>
+    <div className="post-detail-container">
+      <h1 className="post-detail-title">{post.title}</h1>
+      {post.hashtags && post.hashtags.length > 0 && (
+        <div className="post-detail-hashtags-container">
+          {post.hashtags
+            .slice()
+            .sort((a, b) => a.localeCompare(b, "ko"))
+            .map((tag, idx) => (
+              <span key={idx} className="post-detail-hashtags">
+                #{tag}
+              </span>
+            ))}
         </div>
+      )}
+      {typeof post.updatedAt === "string" ? (
+        <div className="post-detail-info">작성일: {post.updatedAt}</div>
+      ) : (
+        <div className="post-detail-info">작성일: {post.createdAt}</div>
+      )}
+
+      <div
+        className="post-detail-content"
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
+      ></div>
+      <div className="post-detail-edit-container">
+        <button onClick={() => navigate("/")} className="button">
+          목록
+        </button>
+        <button onClick={() => navigate(`/edit/${post.id}`)} className="button">
+          수정
+        </button>
+        <button onClick={handleDelete} className="button">
+          삭제
+        </button>
       </div>
     </div>
   );

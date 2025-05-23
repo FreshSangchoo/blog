@@ -1,0 +1,49 @@
+.tag-container {
+  padding: 10px;
+  font-size: 14px;
+  color: #222;
+  border-right: 1px solid rgb(217, 217, 217);
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  min-height: 520px;
+  padding: 20px;
+}
+
+.tag-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  padding-left: 10px;
+}
+
+.tag-divider {
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}
+
+.tag-item {
+  width: 100%;
+  display: flex;
+  padding: 3px 20px 3px 30px;
+  cursor: pointer;
+}
+
+.tag-item.selected {
+  font-weight: bold;
+  color: seagreen;
+}
+
+.tag-name {
+  flex: 1;
+}
+
+.tag-count {
+  color: gray;
+}
+
+@media (max-width: 1024px) {
+  .tag-container {
+    display: none;
+  }
+}

@@ -13,7 +13,23 @@
 
 .post-detail-title {
   width: 100%;
-  padding: 20px;
+  padding: 0px 20px;
+  margin-top: 20px;
+}
+
+.post-detail-hashtags-container {
+  width: 100%;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+
+.post-detail-hashtags {
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-right: 10px;
 }
 
 .post-detail-info {
@@ -42,5 +58,5 @@
 }
 
 .button {
-  margin: 2px;
+  margin: 4px;
 }

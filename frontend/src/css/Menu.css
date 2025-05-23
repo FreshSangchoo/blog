@@ -1,0 +1,22 @@
+.menu-container {
+  display: flex;
+  width: 70%;
+  height: 70px;
+  border-bottom: 2px solid #ccc;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 30px;
+}
+
+.menu-item {
+  width: 33%;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .menu-container {
+    width: 90%;
+  }
+}
