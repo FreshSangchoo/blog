@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Editor } from "@toast-ui/react-editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import "@/css/post/EditPost.css";
+import postAPI from "../../api/post";
 
 function EditPost() {
   const { id } = useParams<{ id: string }>();
@@ -16,39 +17,40 @@ function EditPost() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const stored = localStorage.getItem("posts");
-    if (stored) {
-      const parsed: Post[] = JSON.parse(stored);
-      const found = parsed.find((p: Post) => p.id === Number(id));
-      if (found) {
-        setPost(found);
-        setTitle(found.title);
-        setHashtags(found.hashtags);
-        // setContent(found.content || "");
+    const fetchPost = async () => {
+      try {
+        const fetchedPost = await postAPI.getPost(Number(id));
+        setPost(fetchedPost);
+        setTitle(fetchedPost.title);
+        setHashtags(fetchedPost.hashtags || []);
+      } catch (error) {
+        console.log("PostDetail.tsx에서 게시글불러오기 실패: ", error);
       }
-    }
+    };
+
+    if (id) fetchPost();
   }, [id]);
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const html = editorRef.current?.getInstance().getHTML();
     if (!title || !html) {
       alert("제목과 내용을 모두 입력해주세요.");
       return;
     }
 
-    const stored = JSON.parse(localStorage.getItem("posts") || "[]");
-    const today = new Date();
-    const updatedAt = `${today.getFullYear()}년 ${
-      today.getMonth() + 1
-    }월 ${today.getDate()}일 (수정)`;
+    try {
+      await postAPI.updatePost(Number(id), {
+        title,
+        content: html,
+        hashtags,
+      });
 
-    const updated = stored.map((p: Post) =>
-      p.id === Number(id) ? { ...p, title, content: html, updatedAt } : p
-    );
-
-    localStorage.setItem("posts", JSON.stringify(updated));
-    alert("수정하였습니다.");
-    navigate(`/post/${id}`);
+      alert("수정하였습니다.");
+      navigate(`/post/${id}`);
+    } catch (error) {
+      console.error("게시글 수정 실패:", error);
+      alert("게시글 수정에 실패했습니다.");
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -107,7 +109,7 @@ function EditPost() {
           ref={editorRef}
           initialValue={post.content}
           previewStyle="vertical"
-          height="400px"
+          height="auto"
           initialEditType="wysiwyg"
           useCommandShortcut={true}
         />

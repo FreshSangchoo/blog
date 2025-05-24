@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { Post } from "../../types/Post";
+import { formatDateWithUpdated } from "@/utils/date";
 import DOMPurify from "dompurify";
+import postAPI from "../../api/post";
+import { marked } from "marked";
 
 import "@/css/post/PostDetail.css";
-import Header from "../Header";
+import { Viewer } from "@toast-ui/react-editor";
 
 function PostDetail() {
   const { id } = useParams<{ id: string }>();
@@ -12,29 +15,33 @@ function PostDetail() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const stored = localStorage.getItem("posts");
+    const fetchPost = async () => {
+      try {
+        const fetchedPost = await postAPI.getPost(Number(id));
+        setPost(fetchedPost);
+      } catch (error) {
+        console.log("PostDetail.tsx에서 게시글불러오기 실패: ", error);
+      }
+    };
 
-    if (!stored) return;
-
-    const parsed: Post[] = JSON.parse(stored);
-    const found = parsed.find((p) => p.id === Number(id));
-    setPost(found || null);
+    if (id) fetchPost();
   }, [id]);
 
   if (!post) {
     return <div>해당 글을 찾을 수 없습니다.</div>;
   }
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     const confirmDelete = window.confirm("글을 삭제하시겠습니까?");
+    if (!confirmDelete) return;
 
-    if (confirmDelete) {
-      const stored = JSON.parse(localStorage.getItem("posts") || "[]");
-      const updated = stored.filter((p: Post) => p.id !== post.id);
-      localStorage.setItem("posts", JSON.stringify(updated));
-
+    try {
+      await postAPI.deletePost(Number(id));
       alert("삭제되었습니다.");
       navigate("/");
+    } catch (error) {
+      alert("삭제 실패");
+      console.log("삭제 실패: ", error);
     }
   };
 
@@ -57,16 +64,17 @@ function PostDetail() {
             ))}
         </div>
       )}
-      {typeof post.updatedAt === "string" ? (
-        <div className="post-detail-info">작성일: {post.updatedAt}</div>
-      ) : (
-        <div className="post-detail-info">작성일: {post.createdAt}</div>
-      )}
+      <div className="post-detail-info">
+        작성일:{" "}
+        {formatDateWithUpdated(
+          post.updatedAt || post.createdAt,
+          post.updatedAt !== post.createdAt
+        )}
+      </div>
 
-      <div
-        className="post-detail-content"
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }}
-      ></div>
+      <div className="post-detail-content">
+        <Viewer initialValue={post.content} />
+      </div>
       <div className="post-detail-edit-container">
         <button onClick={() => navigate("/list")} className="button">
           목록

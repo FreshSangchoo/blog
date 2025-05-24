@@ -58,8 +58,18 @@ public class PostController {
 
     // AI 게시글 생성
     @PostMapping("/generate-post")
-    public ResponseEntity<AIPostResponseDto> generatePost(@RequestBody AIPostRequestDto dto) {
-        return ResponseEntity.ok(postService.generateTechPost(dto));
+    public ResponseEntity<?> generatePost(@RequestBody AIPostRequestDto dto) {
+        try {
+            AIPostResponseDto response = postService.generateTechPost(dto);
+            return ResponseEntity.ok(response);
+        } catch (IllegalStateException e) {
+            // 호출 횟수 제한에 걸렸을 경우
+            return ResponseEntity.status(429).body(Map.of("error", e.getMessage()));
+        } catch (Exception e) {
+            // 예기치 못한 서버 오류
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body(Map.of("error", e.getMessage()));
+        }
     }
 
 }

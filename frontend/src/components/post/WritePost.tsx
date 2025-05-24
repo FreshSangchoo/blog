@@ -3,6 +3,7 @@ import "@/css/post/WritePost.css";
 import { useNavigate } from "react-router-dom";
 import { Editor } from "@toast-ui/react-editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
+import postAPI from "../../api/post";
 
 function WritePost() {
   const [title, setTitle] = useState("");
@@ -28,7 +29,7 @@ function WritePost() {
     };
   }, [title, hashtags, content]);
 
-  const registPost = () => {
+  const registPost = async () => {
     const content = editorRef.current?.getInstance().getMarkdown();
 
     if (!title || !content) {
@@ -36,31 +37,37 @@ function WritePost() {
       return;
     }
 
-    const today = new Date();
-
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const date = today.getDate();
-    // const hour = today.getHours();
-    // const minute = today.getMinutes();
-    // const second = today.getSeconds();
-
-    const createdAt = `${year}년 ${month}월 ${date}일`;
-    console.log("오늘은 ", createdAt);
-
     const newPost = {
-      id: Date.now(),
       title,
       content,
       hashtags,
-      createdAt,
     };
 
-    const saved = JSON.parse(localStorage.getItem("posts") || "[]");
-    localStorage.setItem("posts", JSON.stringify([newPost, ...saved]));
+    try {
+      await postAPI.createPost(newPost);
+      alert("게시글이 등록되었습니다.");
+      navigate("/list");
+    } catch (error) {
+      console.log("WritePost.tsx에서 registPost 실패: ", error);
+    }
+  };
 
-    alert("게시글이 등록되었습니다.");
-    navigate("/");
+  const generatePost = async () => {
+    if (!title.trim()) {
+      alert("제목은 필수입니다.");
+      return;
+    }
+
+    try {
+      const markdown = await postAPI.generatePost(title, content);
+
+      if (markdown) {
+        editorRef.current?.getInstance().setMarkdown(markdown);
+        setContent(markdown);
+      }
+    } catch (error) {
+      console.log("generatePost 실패: ", error);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -128,6 +135,9 @@ function WritePost() {
         />
       </div>
       <div className="write-post-save-button-container">
+        <button onClick={generatePost} className="button">
+          AI 글 생성
+        </button>
         <button onClick={registPost} className="button">
           등록
         </button>

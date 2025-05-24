@@ -2,6 +2,7 @@ import "@/css/Tags.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { Post } from "../types/Post";
+import postAPI from "@/api/post";
 
 function Tags() {
   const [tagCounts, setTagCounts] = useState<Record<string, number>>({});
@@ -9,19 +10,24 @@ function Tags() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const stored = localStorage.getItem("posts");
-    if (!stored) return;
+    const fetchPosts = async () => {
+      try {
+        const posts: Post[] = await postAPI.getAllPosts();
+        const counts: Record<string, number> = {};
 
-    const posts: Post[] = JSON.parse(stored);
-    const counts: Record<string, number> = {};
+        posts.forEach((post) => {
+          (post.hashtags || []).forEach((tag) => {
+            counts[tag] = (counts[tag] || 0) + 1;
+          });
+        });
 
-    posts.forEach((post) => {
-      (post.hashtags || []).forEach((tag) => {
-        counts[tag] = (counts[tag] || 0) + 1;
-      });
-    });
+        setTagCounts(counts);
+      } catch (error) {
+        console.error("태그 목록 불러오기 실패: ", error);
+      }
+    };
 
-    setTagCounts(counts);
+    fetchPosts();
   }, []);
 
   const selectedTag = decodeURIComponent(

@@ -2,6 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "@/css/post/PostList.css";
 import type { Post } from "../../types/Post";
+import postAPI from "../../api/post";
+import { formatKoreanDate } from "@/utils/date";
 
 function PostList() {
   const { tag } = useParams<{ tag: string }>();
@@ -9,17 +11,24 @@ function PostList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const stored = localStorage.getItem("posts");
-    if (!stored) return;
+    const fetchPosts = async () => {
+      try {
+        const allPosts = await postAPI.getAllPosts();
 
-    const allPosts: Post[] = JSON.parse(stored);
+        if (!tag) {
+          setPosts(allPosts);
+        } else {
+          const filtered = allPosts.filter((post: Post) =>
+            post.hashtags?.includes(tag)
+          );
+          setPosts(filtered);
+        }
+      } catch (error) {
+        console.log("PostList.tsx에서 전체 게시글 불러오기 실패: ", error);
+      }
+    };
 
-    if (!tag) {
-      setPosts(allPosts);
-    } else {
-      const filtered = allPosts.filter((post) => post.hashtags?.includes(tag));
-      setPosts(filtered);
-    }
+    fetchPosts();
   }, [tag]);
 
   return (
@@ -38,7 +47,7 @@ function PostList() {
                 {post.title}
               </div>
               <div className="post-list-detail-date">
-                {post.updatedAt ? post.updatedAt : post.createdAt}
+                {formatKoreanDate(post.updatedAt || post.createdAt)}
               </div>
             </li>
           ))}

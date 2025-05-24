@@ -8,7 +8,7 @@ export default defineConfig({
   // 절대경로 설정
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
