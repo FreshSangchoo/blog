@@ -6,5 +6,4 @@
 
 - **Frontend**: React
 - **Backend**: Spring Boot
-- **AI Server**: Python + FastAPI + OpenAI API
 - **Database**: MySQL
