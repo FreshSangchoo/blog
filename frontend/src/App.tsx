@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "@/App.css";
 import Layout from "./pages/Layout";
-import Introduction from "./components/Introduction";
+import Introduction from "./components/introduce/Introduction";
 import PostDetail from "./components/post/PostDetail";
 import WritePost from "./components/post/WritePost";
 import EditPost from "./components/post/EditPost";

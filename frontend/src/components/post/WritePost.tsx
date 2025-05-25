@@ -125,7 +125,6 @@ function WritePost() {
           ref={editorRef}
           initialValue=" "
           previewStyle="vertical"
-          height="400px"
           initialEditType="wysiwyg"
           useCommandShortcut={true}
           onChange={() => {

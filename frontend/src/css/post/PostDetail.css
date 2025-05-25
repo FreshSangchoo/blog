@@ -2,7 +2,7 @@
   width: 90%;
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 1.875rem; /* 30px */
 }
 
 @media (max-width: 1024px) {
@@ -13,24 +13,24 @@
 
 .post-detail-title {
   width: 100%;
-  padding: 0px 20px;
-  margin-top: 20px;
+  padding: 0 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .post-detail-hashtags-container {
   width: 100%;
-  padding: 0px 20px;
-  margin-bottom: 20px;
+  padding: 0 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .post-detail-hashtags {
   background-color: #f1f1f1;
   color: black;
-  font-size: 13px;
-  padding: 4px 10px;
-  border-radius: 12px;
-  margin-right: 10px;
-  line-height: 32px;
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.75rem;
+  margin-right: 0.625rem;
+  line-height: 2rem;
   cursor: pointer;
 }
 
@@ -38,18 +38,20 @@
   display: flex;
   width: 100%;
   justify-content: end;
-  padding-right: 20px;
+  padding-right: 1.25rem;
   font-weight: 400;
   color: rgb(118, 118, 118);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .post-detail-content {
   width: 100%;
-  padding: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  word-break: break-all;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  word-break: break-word;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
 }
 
 .post-detail-content img {
@@ -59,13 +61,92 @@
   margin: 1rem 0;
 }
 
+/* Toast UI Viewer 공통 콘텐츠 스타일 */
+.toastui-editor-contents,
+.post-detail-content {
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  color: #333;
+}
+
+/* 제목 */
+.toastui-editor-contents h1 {
+  font-size: 2rem !important;
+  margin: 2.5rem 0 1.5rem;
+  font-weight: 800;
+}
+
+.toastui-editor-contents h2,
+.post-detail-content h2 {
+  font-size: 1.75rem !important;
+  margin: 2rem 0 1.2rem !important;
+  font-weight: 700 !important;
+  border-bottom: none;
+}
+
+.toastui-editor-contents h3,
+.post-detail-content h3,
+.toastui-editor-contents h3 span {
+  font-size: 1.5rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #222 !important;
+  line-height: 1.4 !important;
+  border-bottom: none;
+}
+
+/* Toast UI Editor에서 자동 삽입되는 제목 밑줄 제거 */
+.toastui-editor-contents h1,
+.toastui-editor-contents h2,
+.toastui-editor-contents h3 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* 본문 단락 */
+.toastui-editor-contents p,
+.post-detail-content p {
+  margin: 1rem 0 !important;
+  line-height: 2 !important;
+}
+
+/* 리스트 */
+.toastui-editor-contents ul,
+.toastui-editor-contents ol,
+.post-detail-content ul,
+.post-detail-content ol {
+  margin-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* 코드 블럭 */
+.toastui-editor-contents pre,
+.post-detail-content pre {
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+/* 인라인 코드 */
+.toastui-editor-contents code,
+.post-detail-content code {
+  background-color: #f1f1f1;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
 .post-detail-edit-container {
   width: 100%;
   display: flex;
   justify-content: end;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .button {
-  margin: 4px;
+  margin: 0.25rem;
 }
