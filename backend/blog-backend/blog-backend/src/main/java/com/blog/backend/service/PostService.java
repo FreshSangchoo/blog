@@ -181,7 +181,6 @@ public class PostService {
                 - 이모지(예: ✅, ⚠️, 💡, 👉)는 적절히 사용해도 좋습니다.  
                   단, 과도하게 남발하지 말고, 강조나 안내 목적에 한해 사용해 주세요.
                 - 최상단 제목은 생략해 주세요.
-                - 문단 제목에 밑줄을 그지 말아 주세요.
                 """, dto.getTitle(), dto.getContent(), LocalDate.now(), LocalDate.now());
 
 
