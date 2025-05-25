@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { Post } from "../../types/Post";
 import { formatDateWithUpdated } from "@/utils/date";
-import DOMPurify from "dompurify";
 import postAPI from "../../api/post";
-import { marked } from "marked";
 
 import "@/css/post/PostDetail.css";
 import { Viewer } from "@toast-ui/react-editor";
@@ -18,6 +16,7 @@ function PostDetail() {
     const fetchPost = async () => {
       try {
         const fetchedPost = await postAPI.getPost(Number(id));
+        console.log("PostDetail.tsx에서 getPost 성공");
         setPost(fetchedPost);
       } catch (error) {
         console.log("PostDetail.tsx에서 게시글불러오기 실패: ", error);

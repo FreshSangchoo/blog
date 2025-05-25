@@ -20,6 +20,7 @@ function EditPost() {
     const fetchPost = async () => {
       try {
         const fetchedPost = await postAPI.getPost(Number(id));
+        console.log("EditPost.tsx에서 getPost 성공");
         setPost(fetchedPost);
         setTitle(fetchedPost.title);
         setHashtags(fetchedPost.hashtags || []);

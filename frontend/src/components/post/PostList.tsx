@@ -14,6 +14,7 @@ function PostList() {
     const fetchPosts = async () => {
       try {
         const allPosts = await postAPI.getAllPosts();
+        console.log("PostList.tsx에서 getAllPost 성공");
 
         if (!tag) {
           setPosts(allPosts);

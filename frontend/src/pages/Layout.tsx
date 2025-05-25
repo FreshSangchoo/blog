@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Header";
-import Tags from "../components/Tags";
+import Tags from "@/components/post/Tags";
 import "@/css/Layout.css";
 import Menu from "../components/Menu";
 

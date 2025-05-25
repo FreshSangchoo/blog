@@ -1,7 +1,7 @@
 import "@/css/Tags.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import type { Post } from "../types/Post";
+import type { Post } from "@/types/Post";
 import postAPI from "@/api/post";
 
 function Tags() {
@@ -13,8 +13,8 @@ function Tags() {
     const fetchPosts = async () => {
       try {
         const posts: Post[] = await postAPI.getAllPosts();
+        console.log("Tags.tsx에서 getAllPost 성공");
         const counts: Record<string, number> = {};
-
         posts.forEach((post) => {
           (post.hashtags || []).forEach((tag) => {
             counts[tag] = (counts[tag] || 0) + 1;
