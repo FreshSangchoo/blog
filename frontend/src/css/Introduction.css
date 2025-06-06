@@ -1,2 +1,11 @@
 .introduction-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 40px 20px 40px;
+}
+
+.title-container-text {
+  font-size: 30px;
+  font-weight: 600;
 }

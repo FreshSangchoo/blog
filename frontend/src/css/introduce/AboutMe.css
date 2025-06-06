@@ -1,0 +1,83 @@
+.about-me-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.introduce-me-container {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.profile-image {
+  min-width: 120px;
+  min-height: 120px;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 50px;
+}
+
+.profile-introduction {
+  width: 80%;
+}
+
+.name-text {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-me-description {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.title-container-text {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.about-me-keyword-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 5%;
+  margin-bottom: 80px;
+}
+
+.keyword-card {
+  width: 25%;
+  aspect-ratio: 3 / 4;
+  max-height: 480px;
+  margin: 0px 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: rgb(255, 228, 200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.keyword-image {
+  width: 40%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.keyword-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.keyword-description {
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px;
+}

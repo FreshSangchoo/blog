@@ -5,7 +5,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <div className="header-container" onClick={() => navigate("/")}>
-      FreshSangchoo's 기록
+      FreshSangchoo's 블로그
     </div>
   );
 }
