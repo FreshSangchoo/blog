@@ -8,9 +8,9 @@ function Menu() {
       <div className="menu-item" onClick={() => navigation("/introduce")}>
         🖐 소개
       </div>
-      <div className="menu-item" onClick={() => navigation("/list")}>
+      {/* <div className="menu-item" onClick={() => navigation("/list")}>
         📃 게시글
-      </div>
+      </div> */}
       <div className="menu-item" onClick={() => navigation("/project")}>
         📁 프로젝트
       </div>
