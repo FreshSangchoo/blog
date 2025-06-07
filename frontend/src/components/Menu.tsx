@@ -6,13 +6,13 @@ function Menu() {
   return (
     <div className="menu-container">
       <div className="menu-item" onClick={() => navigation("/introduce")}>
-        소개
+        🖐 소개
       </div>
       <div className="menu-item" onClick={() => navigation("/list")}>
-        게시글
+        📃 게시글
       </div>
       <div className="menu-item" onClick={() => navigation("/project")}>
-        프로젝트
+        📁 프로젝트
       </div>
     </div>
   );

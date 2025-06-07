@@ -5,10 +5,11 @@
   flex: auto;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 60px;
   cursor: pointer;
   border-bottom: 2px solid #ccc;
   padding-bottom: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 @media (max-width: 1024px) {

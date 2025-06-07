@@ -1,0 +1,94 @@
+.project-detail-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.project-name {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.project-summary {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-detail-image {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  border-radius: 12px;
+  margin-bottom: 60px;
+  object-fit: cover;
+}
+
+.title-text {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contents-text {
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.project-screenshot-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.project-screenshot-group img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.screenshot-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+.screenshot-container.column {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.screenshot-media-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}
+.screenshot-container.column img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.screenshot-container.column video {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.screenshot-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.description-text {
+  line-height: 30px;
+}

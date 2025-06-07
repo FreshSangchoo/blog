@@ -13,6 +13,8 @@
   width: 33%;
   text-align: center;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {

@@ -7,6 +7,7 @@ import WritePost from "./components/post/WritePost";
 import EditPost from "./components/post/EditPost";
 import PostList from "./components/post/PostList";
 import Project from "./components/project/Project";
+import ProjectDetail from "./components/project/ProjectDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="list" element={<PostList />} />
           <Route path="list/:tag" element={<PostList />} />
           <Route path="project" element={<Project />} />
+          <Route path="project/:id" element={<ProjectDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
