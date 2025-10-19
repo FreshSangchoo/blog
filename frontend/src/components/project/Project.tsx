@@ -1,4 +1,3 @@
-// src/project/Project.tsx
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 import "@/css/project/Project.css";
@@ -6,6 +5,7 @@ import poppinImage from "@/assets/images/project/poppin/poppin.png";
 import donzoomImage from "@/assets/images/project/donzoom/donzoom.png";
 import connectImage from "@/assets/images/project/connect/connect.png";
 import deallightImage from "@/assets/images/project/deallight/deallight.png";
+import akifyImage from "@/assets/images/project/akify/akify.png";
 
 const projectList = [
   {
@@ -31,6 +31,12 @@ const projectList = [
     title: "deal-light",
     summary: "가전 제품의 에너지 소비 효율 비교 플랫폼 ⚡",
     image: deallightImage,
+  },
+  {
+    id: "akify",
+    title: "아키파이",
+    summary: "악기 중고거래 플랫폼 🎸",
+    image: akifyImage,
   },
 ];
 
