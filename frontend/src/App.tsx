@@ -8,8 +8,14 @@ import EditPost from "./components/post/EditPost";
 import PostList from "./components/post/PostList";
 import Project from "./components/project/Project";
 import ProjectDetail from "./components/project/ProjectDetail";
+import { useEffect } from "react";
+import { initTheme } from "@/utils/theme";
 
 function App() {
+  useEffect(() => {
+    initTheme();
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>

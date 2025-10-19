@@ -1,0 +1,36 @@
+.text-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.text-button.underline {
+  text-decoration: underline;
+}
+
+.text-button.primary {
+  color: var(--text);
+}
+
+.text-button.secondary {
+  color: var(--text-secondary);
+}
+
+.text-button.accent {
+  color: var(--accent);
+}
+
+.text-button.bold {
+  font-weight: 700;
+}
+
+.text-button.size {
+}
+
+.text-button:hover {
+  color: var(--accent-hover);
+}

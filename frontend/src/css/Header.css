@@ -1,6 +1,17 @@
 .header-container {
   display: flex;
   width: 70%;
+  flex-direction: column;
+}
+
+.header-button-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.header-signboard-container {
+  display: flex;
   height: 150px;
   flex: auto;
   justify-content: center;

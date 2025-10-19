@@ -8,7 +8,56 @@ html {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: rgb(255, 252, 247);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Light Mode */
+:root {
+  --bg: rgb(249, 250, 251);
+  --surface: rgb(255, 255, 255);
+  --text: rgb(17, 24, 39);
+  --text-secondary: rgb(107, 114, 128);
+  --border: rgb(229, 231, 235);
+  --accent: rgb(37, 99, 235);
+  --accent-hover: rgb(30, 64, 175);
+  --error: rgb(220, 38, 38);
+  --success: rgb(22, 163, 74);
+  --radius: 10px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] {
+  --bg: rgb(15, 23, 42);
+  --surface: rgb(30, 41, 59);
+  --text: rgb(241, 245, 249);
+  --text-secondary: rgb(148, 163, 184);
+  --border: rgb(51, 65, 85);
+  --accent: rgb(96, 165, 250);
+  --accent-hover: rgb(59, 130, 246);
+  --error: rgb(248, 113, 113);
+  --success: rgb(74, 222, 128);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: rgb(15, 23, 42);
+    --surface: rgb(30, 41, 59);
+    --text: rgb(241, 245, 249);
+    --text-secondary: rgb(148, 163, 184);
+    --border: rgb(51, 65, 85);
+    --accent: rgb(96, 165, 250);
+    --accent-hover: rgb(59, 130, 246);
+    --error: rgb(248, 113, 113);
+    --success: rgb(74, 222, 128);
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 #root {
@@ -17,7 +66,7 @@ html {
 }
 
 button {
-  background-color: dodgerblue;
+  background-color: var(--accent);
   border: 1px solid transparent;
   border-radius: 6px;
   color: white;
@@ -29,4 +78,10 @@ button {
   padding: 0px 12px 0px 12px;
   text-align: center;
   vertical-align: top;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
