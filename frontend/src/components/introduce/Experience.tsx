@@ -7,11 +7,7 @@ function Experience() {
       <div className="experience-card-container">
         <div className="experience-card">
           <div className="experience-contents">
-            <div className="experience-title">
-              잼머링
-              <br />
-              (아키파이)
-            </div>
+            <div className="experience-title">잼머링</div>
             <div className="experience-period">2024.7. ~ 현재</div>
           </div>
           <div className="experience-description">
