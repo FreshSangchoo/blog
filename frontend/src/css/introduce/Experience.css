@@ -15,8 +15,9 @@
   width: 90%;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
+  transition: border-color 0.2s ease;
 }
 .experience-contents {
   width: 260px;
@@ -36,26 +37,78 @@
 .experience-period {
   font-size: 16px;
   white-space: nowrap;
+  color: var(--text-secondary);
 }
 .experience-description {
   width: 100%;
   max-width: 800px;
   padding: 20px 20px 20px 0px;
   word-break: keep-all;
+  line-height: 1.8;
+  color: var(--text);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .experience-card {
-    flex-direction: column;
+    width: 95%;
   }
 
   .experience-description {
-    max-width: 100%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+    margin-bottom: 60px;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    width: 95%;
   }
 
   .experience-contents {
     width: 100%;
     align-items: center;
     text-align: center;
+    padding: 20px;
+    margin-right: 0;
+  }
+
+  .experience-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .experience-period {
+    font-size: 14px;
+  }
+
+  .experience-description {
+    max-width: 100%;
+    padding: 15px 20px 20px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-card {
+    width: 100%;
+  }
+
+  .experience-title {
+    font-size: 18px;
+  }
+
+  .experience-period {
+    font-size: 13px;
+  }
+
+  .experience-description {
+    font-size: 13px;
+    padding: 10px 15px 15px 15px;
+    line-height: 1.6;
   }
 }

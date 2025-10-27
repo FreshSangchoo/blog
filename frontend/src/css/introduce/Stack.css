@@ -18,9 +18,15 @@
   box-sizing: border-box;
   padding: 20px 30px 20px 30px;
   border-radius: 20px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--stack-card-bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
   word-break: break-all;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.stack-card:hover {
+  transform: translateY(-5px);
 }
 
 .skill-type-container {
@@ -44,9 +50,68 @@
 
 .skill-proficiency {
   font-size: 24px;
-  color: gold;
+  color: var(--star-color);
 }
 
 .skill-description {
   font-size: 16px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .stack-card {
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-card-container {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+
+  .stack-card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 140px;
+    padding: 15px 20px;
+  }
+
+  .skill-type {
+    font-size: 20px;
+    margin-right: 12px;
+  }
+
+  .skill-proficiency {
+    font-size: 20px;
+  }
+
+  .skill-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-card {
+    padding: 12px 15px;
+  }
+
+  .skill-type-image {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  .skill-type {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  .skill-proficiency {
+    font-size: 18px;
+  }
+
+  .skill-description {
+    font-size: 13px;
+  }
 }

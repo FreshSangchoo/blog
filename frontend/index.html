@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FreshSangchoo's Blog</title>
+    <title>박영남 | Frontend Developer Portfolio</title>
+
+    <script>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+
+        if (theme === "dark") {
+          document.documentElement.style.backgroundColor = "rgb(15, 23, 42)";
+          document.documentElement.style.color = "rgb(241, 245, 249)";
+        } else {
+          document.documentElement.style.backgroundColor = "rgb(249, 250, 251)";
+          document.documentElement.style.color = "rgb(17, 24, 39)";
+        }
+      })();
+    </script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

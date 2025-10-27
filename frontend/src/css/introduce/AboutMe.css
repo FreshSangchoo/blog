@@ -7,7 +7,7 @@
 .introduce-me-container {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: center;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 100px;
@@ -48,23 +48,32 @@
 }
 
 .keyword-card {
-  width: 25%;
-  aspect-ratio: 3 / 4;
-  max-height: 480px;
-  margin: 0px 40px;
+  width: 280px;
+  height: 380px;
+  margin: 0px 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   border-radius: 20px;
-  background-color: rgb(255, 228, 200);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 20px;
+  background-color: var(--keyword-card-bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  padding: 30px 20px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.keyword-card:hover {
+  transform: translateY(-5px);
 }
 
 .keyword-image {
-  width: 40%;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  filter: brightness(0.95);
+  transition: filter 0.2s ease;
 }
 
 .keyword-title {
@@ -86,7 +95,84 @@
   }
 
   .keyword-card {
-    width: 90%;
+    width: 70%;
+    max-width: 400px;
     margin: 20px 0;
+  }
+
+  .introduce-me-container {
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .profile-image {
+    margin-right: 30px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .introduce-me-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+  }
+
+  .profile-introduction {
+    width: 100%;
+  }
+
+  .name-text {
+    font-size: 24px;
+  }
+
+  .about-me-description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .keyword-card {
+    width: 90%;
+    max-width: 350px;
+    margin: 15px 0;
+  }
+
+  .keyword-image {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .keyword-title {
+    font-size: 18px;
+  }
+
+  .keyword-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name-text {
+    font-size: 20px;
+  }
+
+  .about-me-description {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .keyword-card {
+    width: 95%;
   }
 }
