@@ -84,7 +84,7 @@ function WritePost() {
   };
 
   return (
-    <div className="wirte-post-container">
+    <div className="write-post-container">
       <h1 className="write-post-title">게시글 작성</h1>
       <div className="write-post-title-container">
         <input
