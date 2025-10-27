@@ -16,15 +16,46 @@
   flex: auto;
   justify-content: center;
   align-items: center;
-  font-size: 60px;
+  font-size: 70px;
   cursor: pointer;
   border-bottom: 2px solid #ccc;
   padding-bottom: 20px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  transition: font-size 0.2s ease;
 }
 
 @media (max-width: 1024px) {
   .header-container {
     width: 90%;
+  }
+
+  .header-signboard-container {
+    height: 120px;
+    font-size: 48px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    width: 95%;
+  }
+
+  .header-signboard-container {
+    height: 100px;
+    font-size: 36px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    width: 100%;
+  }
+
+  .header-signboard-container {
+    height: 80px;
+    font-size: 28px;
+    padding-bottom: 10px;
   }
 }
