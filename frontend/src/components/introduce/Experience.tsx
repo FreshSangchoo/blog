@@ -7,6 +7,27 @@ function Experience() {
       <div className="experience-card-container">
         <div className="experience-card">
           <div className="experience-contents">
+            <div className="experience-title">
+              잼머링
+              <br />
+              (아키파이)
+            </div>
+            <div className="experience-period">2024.7. ~ 현재</div>
+          </div>
+          <div className="experience-description">
+            악기 중고 거래 플랫폼 '아키파이' 앱을 React Native로 개발하여 Google
+            Play와 App Store에 실제 배포 및 운영 중입니다. <br />
+            프론트엔드 개발 리드로서 디자이너와 협업하며 앱의 전반적인 기능과
+            사용자 경험을 구현했습니다. 프로젝트 개발 단계부터 실제 배포, 그리고
+            현재 운영 단계까지 전 과정을 경험하며 개발자로서의 실무 역량을 쌓고
+            있습니다. <br />
+            앱스토어 심사 프로세스, 버전 관리, 실사용자 피드백 대응 등 실제
+            서비스 운영 경험을 통해 안정적인 서비스를 만들고 유지하려 노력하고
+            있습니다.
+          </div>
+        </div>
+        <div className="experience-card">
+          <div className="experience-contents">
             <div className="experience-title">SSAFY</div>
             <div className="experience-period">2024.1. ~ 2024.12.</div>
           </div>
