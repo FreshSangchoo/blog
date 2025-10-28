@@ -21,7 +21,7 @@ function Akify() {
         <div className="contents-text">
           frontend 4명, backend 2명, 디자이너 2명
           <br />
-          2024.07 ~ 현재 (지속 업데이트 중)
+          2025.07 ~ 현재 (지속 업데이트 중)
         </div>
 
         <div className="title-text">프로젝트 개요</div>
