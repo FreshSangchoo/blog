@@ -8,7 +8,7 @@ function Experience() {
         <div className="experience-card">
           <div className="experience-contents">
             <div className="experience-title">잼머링</div>
-            <div className="experience-period">2025.7. ~ 현재</div>
+            <div className="experience-period">2025.07. ~ 현재</div>
           </div>
           <div className="experience-description">
             악기 중고 거래 플랫폼 '아키파이' 앱을 React Native로 개발하여 Google
@@ -25,7 +25,7 @@ function Experience() {
         <div className="experience-card">
           <div className="experience-contents">
             <div className="experience-title">SSAFY</div>
-            <div className="experience-period">2024.1. ~ 2024.12.</div>
+            <div className="experience-period">2024.01. ~ 2024.12.</div>
           </div>
           <div className="experience-description">
             삼성 청년 SW 아카데미에서 1년 동안 집중적인 교육과 프로젝트를
@@ -48,7 +48,7 @@ function Experience() {
               <br />
               총학생회장
             </div>
-            <div className="experience-period">2023.4. ~ 2023.12.</div>
+            <div className="experience-period">2023.04. ~ 2023.12.</div>
           </div>
           <div className="experience-description">
             2023년 서강대학교 총학생회장으로서 학교와 학우들 간의 가교가 되어
@@ -68,7 +68,7 @@ function Experience() {
               <br />
               Contents Team 인턴
             </div>
-            <div className="experience-period">2022.9. ~ 2023.2.</div>
+            <div className="experience-period">2022.09. ~ 2023.02.</div>
           </div>
           <div className="experience-description">
             QANDA에서 Contents Team 인턴으로 근무하며, 수학 문제에 대한 해설과
