@@ -50,7 +50,9 @@
   flex-direction: column;
 }
 
-.project-screenshot-group img {
+.project-screenshot-group img,
+.project-screenshot-group video,
+.project-screenshot-group .project-detail-video {
   width: 200px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -74,12 +76,13 @@
   justify-content: center;
   gap: 30px;
 }
-.screenshot-container.column img {
-  width: 100%;
+.screenshot-container.column img,
+video {
+  width: 200px;
   margin-bottom: 20px;
 }
-.screenshot-container.column video {
-  width: 30%;
+.screenshot-container video {
+  width: 200px;
   margin-bottom: 20px;
 }
 

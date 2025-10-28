@@ -1,6 +1,14 @@
 import "@/css/project/ProjectDetail.css";
 
 import akifyThumbnail from "@/assets/images/project/akify/akify.png";
+import akifySocialLogin from "@/assets/images/project/akify/akifySocialLogin.gif";
+import akifySocialSignup from "@/assets/images/project/akify/akifySocialSignup.gif";
+import akifyHome from "@/assets/images/project/akify/akifyHome.gif";
+import akifyUpload from "@/assets/images/project/akify/akifyUpload.mp4";
+import akifyExplorePage from "@/assets/images/project/akify/akifyExplorePage.gif";
+import akifySearch from "@/assets/images/project/akify/akifySearch.gif";
+import akifyChatting from "@/assets/images/project/akify/akifyChatting.mp4";
+import akifyMyPage from "@/assets/images/project/akify/akifyMyPage.gif";
 
 function Akify() {
   return (
@@ -45,7 +53,7 @@ function Akify() {
         <div className="title-text">기술 스택</div>
         <ul className="contents-text">
           <li>Frontend: React Native, TypeScript, Zustand</li>
-          <li>Backend: Spring Boot, Postgre</li>
+          <li>Backend: Spring Boot, PostgreSQL</li>
           <li>기타: Firebase, TalkPlus, Danal 본인인증</li>
         </ul>
 
@@ -66,7 +74,7 @@ function Akify() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Android- v1.0.15
+              Android - v1.0.15
             </a>
           </li>
           <li>
@@ -82,17 +90,94 @@ function Akify() {
 
         <div className="title-text">서비스 화면</div>
         <div className="project-screenshot-group">
-          {/*
-          <div className="screenshot-container column">
-            <img src={homeScreenImg} alt="홈 화면" />
+          <div className="screenshot-container">
+            <img src={akifySocialSignup} alt="소셜 회원가입" />
             <div className="description-screenshot">
-              <div className="screenshot-title">홈 화면</div>
+              <div className="screenshot-title">소셜 회원가입</div>
               <div className="description-text">
-                설명 텍스트
+                카카오톡 회원가입 과정입니다.
               </div>
             </div>
           </div>
-          */}
+
+          <div className="screenshot-container">
+            <img src={akifySocialLogin} alt="소셜로그인" />
+            <div className="description-screenshot">
+              <div className="screenshot-title">소셜로그인</div>
+              <div className="description-text">
+                카카오톡 로그인 과정입니다.
+              </div>
+            </div>
+          </div>
+          <div className="screenshot-container">
+            <img src={akifyHome} alt="홈 화면" />
+            <div className="description-screenshot">
+              <div className="screenshot-title">홈 화면</div>
+              <div className="description-text">
+                아키파이 첫 진입시 보이는 홈 화면입니다.
+              </div>
+            </div>
+          </div>
+          <div className="screenshot-container">
+            <video
+              src={akifyUpload}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="project-detail-video"
+            />
+            <div className="description-screenshot">
+              <div className="screenshot-title">매물 등록</div>
+              <div className="description-text">
+                사용자들이 매물을 등록하는 과정입니다.
+              </div>
+            </div>
+          </div>
+          <div className="screenshot-container">
+            <img src={akifyExplorePage} alt="둘러보기" />
+            <div className="description-screenshot">
+              <div className="screenshot-title">둘러보기</div>
+              <div className="description-text">
+                사용자들이 등록한 매물들을 둘러볼 수 있습니다.
+              </div>
+            </div>
+          </div>
+          <div className="screenshot-container">
+            <img src={akifySearch} alt="매물 검색" />
+            <div className="description-screenshot">
+              <div className="screenshot-title">매물 검색</div>
+              <div className="description-text">
+                사용자들이 등록한 매물을 이펙터 종류별로 검색할 수 있습니다.
+              </div>
+            </div>
+          </div>
+          <div className="screenshot-container">
+            <video
+              src={akifyChatting}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="project-detail-video"
+            />
+            <div className="description-screenshot">
+              <div className="screenshot-title">채팅</div>
+              <div className="description-text">
+                사용자들이 등록한 매물을 통하여 거래를 위한 채팅을 할 수
+                있습니다.
+              </div>
+            </div>
+          </div>
+          <div className="screenshot-container">
+            <img src={akifyMyPage} alt="마이페이지" />
+            <div className="description-screenshot">
+              <div className="screenshot-title">마이페이지</div>
+              <div className="description-text">
+                사용자의 정보를 관리하는 페이지입니다.
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="title-text">담당 역할</div>
