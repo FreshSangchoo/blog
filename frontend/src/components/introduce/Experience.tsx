@@ -8,7 +8,7 @@ function Experience() {
         <div className="experience-card">
           <div className="experience-contents">
             <div className="experience-title">잼머링</div>
-            <div className="experience-period">2024.7. ~ 현재</div>
+            <div className="experience-period">2025.7. ~ 현재</div>
           </div>
           <div className="experience-description">
             악기 중고 거래 플랫폼 '아키파이' 앱을 React Native로 개발하여 Google
