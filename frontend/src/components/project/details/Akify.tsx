@@ -102,7 +102,7 @@ function Akify() {
           <li>채널톡 고객 지원 시스템 통합</li>
           <li>1:1 채팅 기능 구현 (TalkPlus 연동)</li>
           <li>마이페이지 화면 개발 및 사용자 정보 관리</li>
-          <li>홈 화면 UI/UX 구현</li>
+          <li>홈 화면 구현</li>
         </ul>
 
         <div className="title-text">프로젝트 회고</div>
