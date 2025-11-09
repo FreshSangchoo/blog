@@ -29,7 +29,7 @@ function Akify() {
         <div className="contents-text">
           frontend 4명, backend 2명, 디자이너 2명
           <br />
-          2025.07 ~ 현재 (지속 업데이트 중)
+          2025.07 ~ 2025.10. (v1 까지 운영)
         </div>
 
         <div className="title-text">프로젝트 개요</div>
@@ -74,7 +74,7 @@ function Akify() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Android - v1.0.15
+              Android - v1.0.17
             </a>
           </li>
           <li>
@@ -83,7 +83,7 @@ function Akify() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              iOS - v1.0.10
+              iOS - v1.0.12
             </a>
           </li>
         </ul>
