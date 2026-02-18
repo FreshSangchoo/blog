@@ -11,6 +11,23 @@
   margin-bottom: 80px;
 }
 
+.project-section {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 60px;
+}
+
+.project-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-left: 4px;
+}
+
 .project-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

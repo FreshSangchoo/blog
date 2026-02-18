@@ -7,6 +7,23 @@ function Experience() {
       <div className="experience-card-container">
         <div className="experience-card">
           <div className="experience-contents">
+            <div className="experience-title">
+              현대오토에버 모빌리티 SW 스쿨 IT 보안
+            </div>
+            <div className="experience-period">2025.12. ~ 진행 중</div>
+          </div>
+          <div className="experience-description">
+            시스템·네트워크·클라우드 환경 전반의 보안 구조를 학습하며 실무 기반
+            역량을 쌓고 있습니다. <br />
+            OS 보안 관리, 네트워크 보안, 웹·애플리케이션 보안, 데이터베이스 보안
+            등 서비스 전반의 보안 요소를 이해하고, AWS·컨테이너 환경에서의
+            인프라 보안 구성까지 폭넓게 경험하고 있습니다. <br />
+            또한 취약점 분석, 침해사고 대응, 디지털 포렌식, ISMS 기준 대응
+            프로젝트 등을 수행하며 보안 운영 및 대응 관점까지 확장하고 있습니다.
+          </div>
+        </div>
+        <div className="experience-card">
+          <div className="experience-contents">
             <div className="experience-title">잼머링</div>
             <div className="experience-period">2025.07. ~ 2025.10.</div>
           </div>

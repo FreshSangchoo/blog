@@ -22,7 +22,7 @@ function DealLight() {
         <div className="contents-text">
           frontend 3명, backend 2명 (총 5명)
           <br />
-          2025.01.07 ~ 진행 중
+          2025.01.07 ~ 2025.10.31.
         </div>
       </div>
 
