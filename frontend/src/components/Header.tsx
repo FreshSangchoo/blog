@@ -23,6 +23,12 @@ function Header() {
   return (
     <div className="header-container">
       <div className="header-button-container">
+        <div className="header-button-item" onClick={() => window.open("https://github.com/FreshSangchoo", "_blank")}>
+          GitHub
+        </div>
+        <div className="header-button-item" onClick={() => window.open("https://velog.io/@aprldpdy289/posts", "_blank")}>
+          기술 블로그
+        </div>
         <TextButton
           text={`${isDark ? "☀️" : "🌙"}`}
           onClick={changeMode}

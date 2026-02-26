@@ -10,6 +10,23 @@
   align-items: center;
 }
 
+.header-button-item {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 10px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--text-secondary);
+  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
+  text-decoration-color: var(--text-secondary);
+  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
+}
+
 .header-signboard-container {
   display: flex;
   height: 150px;
