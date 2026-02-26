@@ -63,9 +63,9 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.keyword-card:hover {
+/* .keyword-card:hover {
   transform: translateY(-5px);
-}
+} */
 
 .keyword-image {
   width: 100px;

@@ -25,9 +25,9 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.stack-card:hover {
+/* .stack-card:hover {
   transform: translateY(-5px);
-}
+} */
 
 .skill-type-container {
   display: flex;
