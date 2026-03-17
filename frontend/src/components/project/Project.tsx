@@ -6,6 +6,7 @@ import donzoomImage from "@/assets/images/project/donzoom/donzoom.png";
 import connectImage from "@/assets/images/project/connect/connect.png";
 import deallightImage from "@/assets/images/project/deallight/deallight.png";
 import akifyImage from "@/assets/images/project/akify/akify.png";
+import { useMemo, useState } from "react";
 
 const projectList = [
   {
@@ -45,20 +46,57 @@ const projectList = [
   },
 ];
 
+type SortOptions = 'latest' | 'name';
+
+const SORT_LABEL = {
+  latest: '최신순',
+  name: '이름순'
+}
+
 const frontendProjects = projectList.filter((p) => p.category === "frontend");
 const securityProjects = projectList.filter((p) => p.category === "security");
 
 function Project() {
   const navigate = useNavigate();
+  const [sort, setSort] = useState<SortOptions>('latest');
+  const [sortLabel, setSortLabel] = useState<string>(SORT_LABEL['latest']);
+
+  const handleSort = () => {
+    if (sort === 'latest') {
+      setSort("name");
+      setSortLabel(SORT_LABEL["name"]);
+    } else {
+      setSort("latest");
+      setSortLabel(SORT_LABEL["latest"]);
+    }
+  }
+
+  const sortedProjects = useMemo(() => {
+    const sorted = [...frontendProjects];
+
+    if (sort === 'latest') {
+      return sorted.reverse();
+    }
+    if (sort === 'name') {
+      return sorted.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    return sorted;
+  }, [sort]);
 
   return (
     <div className="project-container">
+      <div className="project-sort">
+        <div onClick={handleSort} className="project-sort-text">
+          {sortLabel}
+        </div>
+      </div>
       <h1 className="project-title">PROJECT LIST</h1>
 
       <div className="project-section">
         <h2 className="project-section-title">Frontend</h2>
         <div className="project-card-grid">
-          {frontendProjects.map((project) => (
+          {sortedProjects.map((project) => (
             <ProjectCard
               key={project.id}
               title={project.title}
