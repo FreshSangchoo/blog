@@ -21,6 +21,15 @@ function Cloud4ever() {
       />
 
       <div>
+        <div className="title-text">제작 인원 & 제작 기간</div>
+        <div className="contents-text">
+          frontend 1명, backend 1명, 진단/조치 terraform 제작 3명 (총 5명)
+          <br />
+          2026.03.12 ~ 2026.03.25 (주말과 공휴일을 제외, 약 10일)
+        </div>
+      </div>
+
+      <div>
         <div className="title-text">프로젝트 개요</div>
         <div className="contents-text">
           Cloud4ever는 Terraform 기반 AWS 배포 과정에서 보안 취약 설정을 사전에
