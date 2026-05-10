@@ -6,6 +6,8 @@ import donzoomImage from "@/assets/images/project/donzoom/donzoom.png";
 import connectImage from "@/assets/images/project/connect/connect.png";
 import deallightImage from "@/assets/images/project/deallight/deallight.png";
 import akifyImage from "@/assets/images/project/akify/akify.png";
+import autoismsImage from "@/assets/images/project/autoisms/autoisms_logo.png";
+import cloud4everImage from "@/assets/images/project/cloud4ever/cloud4ever_logo.png";
 import { useMemo, useState } from "react";
 
 const projectList = [
@@ -43,6 +45,20 @@ const projectList = [
     summary: "악기 중고거래 플랫폼 🎸",
     image: akifyImage,
     category: "frontend",
+  },
+  {
+    id: "autoisms",
+    title: "AUTOISMS",
+    summary: "KISA 기준 보안 취약점 자동 진단 및 조치 시스템",
+    image: autoismsImage,
+    category: "security",
+  },
+  {
+    id: "cloud4ever",
+    title: "Cloud4ever",
+    summary: "Terraform 기반 AWS 보안 분석 및 배포 지원 플랫폼",
+    image: cloud4everImage,
+    category: "security",
   },
 ];
 

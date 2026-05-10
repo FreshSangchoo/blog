@@ -29,6 +29,13 @@
   object-fit: cover;
 }
 
+.project-detail-image.project-logo-image {
+  max-height: 360px;
+  padding: 28px;
+  object-fit: contain;
+  background-color: #fff;
+}
+
 .title-text {
   font-size: 30px;
   font-weight: 600;
@@ -84,6 +91,13 @@ video {
 .screenshot-container video {
   width: 200px;
   margin-bottom: 20px;
+}
+
+.project-screenshot-group .screenshot-container.column .project-wide-image {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin-right: 0;
 }
 
 .screenshot-title {
