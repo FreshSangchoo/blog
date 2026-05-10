@@ -71,7 +71,7 @@ function Connect() {
                 loop
                 muted
                 playsInline
-                className="project-detail-video"
+                className="project-detail-video connect-watch-video"
               />
               <video
                 src={connectPhoneSTT}
@@ -98,7 +98,7 @@ function Connect() {
                 loop
                 muted
                 playsInline
-                className="project-detail-video"
+                className="project-detail-video connect-watch-video"
               />
               <video
                 src={connectPhoneRecommend}
@@ -126,7 +126,7 @@ function Connect() {
                 loop
                 muted
                 playsInline
-                className="project-detail-video"
+                className="project-detail-video connect-watch-video"
               />
               <video
                 src={connectPhoneChange}
@@ -154,7 +154,7 @@ function Connect() {
                 loop
                 muted
                 playsInline
-                className="project-detail-video"
+                className="project-detail-video connect-watch-video"
               />
               <video
                 src={connectPhoneList}
@@ -181,7 +181,7 @@ function Connect() {
                 loop
                 muted
                 playsInline
-                className="project-detail-video"
+                className="project-detail-video connect-watch-video"
               />
               <video
                 src={connectPhoneAlarmName}

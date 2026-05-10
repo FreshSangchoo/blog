@@ -8,7 +8,7 @@ import stockImg from "@/assets/images/project/donzoom/donzoomStock.png";
 
 function DonZoom() {
   return (
-    <div className="project-detail-container">
+    <div className="project-detail-container donzoom-detail">
       <div className="project-detail-header">
         <div className="project-name">돈Zoom</div>
         <div className="project-summary">
