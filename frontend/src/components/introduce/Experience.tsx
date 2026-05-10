@@ -10,16 +10,16 @@ function Experience() {
             <div className="experience-title">
               현대오토에버 모빌리티 SW 스쿨 IT 보안
             </div>
-            <div className="experience-period">2025.12. ~ 진행 중</div>
+            <div className="experience-period">2025.12. ~ 2026.04.</div>
           </div>
           <div className="experience-description">
-            시스템·네트워크·클라우드 환경 전반의 보안 구조를 학습하며 실무 기반
-            역량을 쌓고 있습니다. <br />
+            네트워크·클라우드 환경 전반의 보안 구조를 학습하며 보안 지식을
+            쌓았습니다. <br />
             OS 보안 관리, 네트워크 보안, 웹·애플리케이션 보안, 데이터베이스 보안
             등 서비스 전반의 보안 요소를 이해하고, AWS·컨테이너 환경에서의
-            인프라 보안 구성까지 폭넓게 경험하고 있습니다. <br />
-            과정 중 취약점 분석, 침해사고 대응, 디지털 포렌식, ISMS 기준 대응
-            프로젝트 등을 수행하며 보안 운영 및 대응 관점까지 확장하고 있습니다.
+            인프라 보안 구성까지 폭넓게 경험했습니다. <br />
+            과정 중 취약점 분석, ISMS 기준 대응, AWS 보안 프로젝트를 수행하며
+            보안 관련 업무 관점을 넓혔습니다.
           </div>
         </div>
         <div className="experience-card">
@@ -29,14 +29,14 @@ function Experience() {
           </div>
           <div className="experience-description">
             악기 중고 거래 플랫폼 '아키파이' 앱을 React Native로 개발하여 Google
-            Play와 App Store에 실제 배포 및 운영 중입니다. <br />
+            Play와 App Store에 실제 배포 및 운영했습니다. <br />
             프론트엔드 개발 리드로서 디자이너와 협업하며 앱의 전반적인 기능과
             사용자 경험을 구현했습니다. 프로젝트 개발 단계부터 실제 배포, 그리고
-            현재 운영 단계까지 전 과정을 경험하며 개발자로서의 실무 역량을 쌓고
-            있습니다. <br />
+            현재 운영 단계까지 전 과정을 경험하며 개발자로서의 실무 역량을
+            쌓았습니다. <br />
             앱스토어 심사 프로세스, 버전 관리, 실사용자 피드백 대응 등 실제
-            서비스 운영 경험을 통해 안정적인 서비스를 만들고 유지하려 노력하고
-            있습니다.
+            서비스 운영 경험을 통해 안정적인 서비스를 만들고 유지하려
+            노력했습니다.
           </div>
         </div>
         <div className="experience-card">
